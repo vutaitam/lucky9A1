@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vòng Quay May Mắn</title>
+  <meta name="description" content="Vòng quay may mắn — ai sẽ là người tặng quà cho bạn?">
+  <meta name="theme-color" content="#7b2ff7">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span style="--x:6%;--s:34px;--t:17s;--w:0s">🎁</span>
+    <span style="--x:18%;--s:26px;--t:21s;--w:-6s">💖</span>
+    <span style="--x:31%;--s:22px;--t:15s;--w:-3s">⭐</span>
+    <span style="--x:44%;--s:30px;--t:23s;--w:-11s">🎈</span>
+    <span style="--x:57%;--s:24px;--t:19s;--w:-8s">🌸</span>
+    <span style="--x:69%;--s:32px;--t:25s;--w:-14s">🎀</span>
+    <span style="--x:80%;--s:22px;--t:16s;--w:-5s">✨</span>
+    <span style="--x:92%;--s:28px;--t:20s;--w:-9s">🍀</span>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#/" id="brand" title="Trang chủ">
+      <span class="brand-icon">🎡</span>
+      <span class="brand-text">Vòng Quay <b>May Mắn</b></span>
+    </a>
+    <nav class="nav">
+      <a href="#/" data-nav="home">🏠<span> Chọn bạn</span></a>
+      <a href="#/ket-qua" data-nav="ket-qua">🏆<span> Kết quả</span></a>
+      <button id="soundBtn" class="icon-btn" title="Bật/tắt âm thanh" aria-label="Bật/tắt âm thanh">🔊</button>
+      <button id="fsBtn" class="icon-btn" title="Toàn màn hình" aria-label="Toàn màn hình">⛶</button>
+    </nav>
+  </header>
+
+  <main id="app"><p class="loading">Đang tải… 🎡</p></main>
+
+  <footer class="foot">Làm với 💖 cho <span id="footClass">lớp mình</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/logic.js"></script>
+  <script src="js/wheel.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
