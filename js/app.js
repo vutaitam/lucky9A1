@@ -556,6 +556,17 @@
     applySound();
     if (!state.roster) {
       try { importList(await fetchText(LIST_URL), LIST_URL, true); } catch (e) { /* mở trực tiếp file: nhập tay */ }
+    } else if (state.source === LIST_URL) {
+      // File danh sách trên web đã được sửa: chưa quay lượt nào thì tự cập nhật, có kết quả rồi thì chỉ báo.
+      try {
+        const text = await fetchText(LIST_URL);
+        const fresh = L.buildRoster(L.parseCSV(text)).roster;
+        if (fresh && JSON.stringify(fresh) !== JSON.stringify(state.roster)) {
+          if (Object.values(state.results).some(a => a.length)) {
+            toast('ℹ️ Danh sách lớp trên web đã thay đổi — vào Quản trị → “Tải lại” để cập nhật.');
+          } else importList(text, LIST_URL, true);
+        }
+      } catch (e) { /* mất mạng: dùng danh sách đã lưu */ }
     }
     if (state.roster && state.presetsSource !== 'local' && !hasPresets(state.presetsRaw)) {
       try {
